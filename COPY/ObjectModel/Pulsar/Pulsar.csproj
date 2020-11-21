@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F1D0A1D-B9E2-4016-8CAD-A38745ADDE7F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Pulsar</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Pulsar.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExtendedCameraProperties">
+      <HintPath>..\PropertiesControls\ExtendedCameraProperties\bin\Debug\ExtendedCameraProperties.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendedLightProperties, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PropertiesControls\ExtendedLightProperties\bin\Debug\ExtendedLightProperties.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendedModelProperties">
+      <HintPath>..\PropertiesControls\ModelProperties\ExtendedModelProperties\bin\Debug\ExtendedModelProperties.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendedNodeProperties">
+      <HintPath>..\PropertiesControls\NodeProperties\NodeProperties\bin\Debug\ExtendedNodeProperties.dll</HintPath>
+    </Reference>
+    <Reference Include="PulsarPropertyVector3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Controls\PulsarPropertyVector3\bin\Debug\PulsarPropertyVector3.dll</HintPath>
+    </Reference>
+    <Reference Include="PulsarToolBar">
+      <HintPath>..\PropertiesControls\PulsarToolBar\bin\Debug\PulsarToolBar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Urho.Extensions.WinForms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\UrhoSharp.WinForms.1.9.67\lib\net45\Urho.Extensions.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="UrhoSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\UrhoSharp.1.9.67\lib\net45\UrhoSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>packages\DockPanelSuite.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums.cs" />
+    <Compile Include="Helpers\Dragger.cs" />
+    <Compile Include="Helpers\GizmoHelper.cs" />
+    <Compile Include="Helpers\ReflectionHelper.cs" />
+    <Compile Include="Helpers\Vector3Editor.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectModel\Interfaces\IBaseEntity.cs" />
+    <Compile Include="ObjectModel\Interfaces\IGizmo.cs" />
+    <Compile Include="ObjectModel\Interfaces\IRegisterMessage.cs" />
+    <Compile Include="ObjectModel\MaterialTemp.cs" />
+    <Compile Include="ObjectModel\Messaging\Dependency.cs" />
+    <Compile Include="ObjectModel\Messaging\MessageQueue.cs" />
+    <Compile Include="ObjectModel\Messaging\PulsarMessage.cs" />
+    <Compile Include="ObjectModel\Messaging\Registrant.cs" />
+    <Compile Include="ObjectModel\Primitives\BaseEntity.cs" />
+    <Compile Include="ObjectModel\Primitives\BoxEntity.cs" />
+    <Compile Include="ObjectModel\Primitives\ConeEntity.cs" />
+    <Compile Include="ObjectModel\Primitives\CylinderEntity.cs" />
+    <Compile Include="ObjectModel\Primitives\Gizmo.cs" />
+    <Compile Include="ObjectModel\Primitives\PlaneEntity.cs" />
+    <Compile Include="ObjectModel\Primitives\SphereEntity.cs" />
+    <Compile Include="ObjectModel\Primitives\WirePlane.cs" />
+    <Compile Include="ObjectModel\PropertiesModel\CameraProperties.cs" />
+    <Compile Include="ObjectModel\PropertiesModel\LightProperties.cs" />
+    <Compile Include="ObjectModel\PropertiesModel\ModelProperties.cs" />
+    <Compile Include="ObjectModel\PropertiesModel\NodeProperties.cs" />
+    <Compile Include="ObjectModel\PropertiesModel\PlaneProperties.cs" />
+    <Compile Include="ObjectModel\PulsarApplication.cs" />
+    <Compile Include="ObjectModel\PulsarCamera.cs" />
+    <Compile Include="ObjectModel\PulsarComponent.cs" />
+    <Compile Include="ObjectModel\PulsarLight.cs" />
+    <Compile Include="ObjectModel\PulsarMaterial.cs" />
+    <Compile Include="ObjectModel\PulsarModel.cs" />
+    <Compile Include="ObjectModel\PulsarScene.cs" />
+    <Compile Include="ObjectModel\SelectedObject.cs" />
+    <Compile Include="ObjectModel\SelectedObjects.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PulsarAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PulsarAssets.Designer.cs">
+      <DependentUpon>PulsarAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PulsarExtendedProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PulsarExtendedProperties.Designer.cs">
+      <DependentUpon>PulsarExtendedProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RenderScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenderScene.Designer.cs">
+      <DependentUpon>RenderScene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SceneTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SceneTree.Designer.cs">
+      <DependentUpon>SceneTree.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PulsarAssets.resx">
+      <DependentUpon>PulsarAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PulsarExtendedProperties.resx">
+      <DependentUpon>PulsarExtendedProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenderScene.resx">
+      <DependentUpon>RenderScene.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneTree.resx">
+      <DependentUpon>SceneTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Assets\Animations\Jack_Walk.ani" />
+    <None Include="Assets\Fonts\arial.ttf" />
+    <None Include="Assets\Fonts\arialbd.ttf" />
+    <None Include="Assets\Fonts\arialbi.ttf" />
+    <None Include="Assets\Fonts\ariali.ttf" />
+    <None Include="Assets\Fonts\ARIALN.TTF" />
+    <None Include="Assets\Fonts\ARIALNB.TTF" />
+    <None Include="Assets\Fonts\ARIALNBI.TTF" />
+    <None Include="Assets\Fonts\ARIALNI.TTF" />
+    <None Include="Assets\Fonts\ariblk.ttf" />
+    <None Include="Assets\Models\Box.mdl" />
+    <None Include="Assets\Models\Cone.mdl" />
+    <None Include="Assets\Models\HoverBike.mdl" />
+    <None Include="Assets\Models\Jack.mdl" />
+    <None Include="Assets\Models\Mushroom.mdl" />
+    <None Include="Assets\Models\Plane.mdl" />
+    <None Include="Assets\Models\Sphere.mdl" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\component.png" />
+    <Content Include="Assets\Materials\GizmoBlue.xml" />
+    <Content Include="Assets\Materials\GizmoGreen.xml" />
+    <Content Include="Assets\Materials\GizmoRed.xml" />
+    <Content Include="Assets\Materials\GreenTransparent.xml" />
+    <Content Include="Assets\Materials\Jack.xml" />
+    <Content Include="Assets\Materials\Mushroom.xml" />
+    <Content Include="Assets\Materials\StoneTiled.xml" />
+    <Content Include="Assets\rotate.png" />
+    <Content Include="Assets\scale.png" />
+    <Content Include="Assets\Textures\Jack_body_color.jpg" />
+    <Content Include="Assets\Textures\Jack_face.jpg" />
+    <Content Include="Assets\Textures\Mushroom.dds" />
+    <Content Include="Assets\Textures\StoneDiffuse.dds" />
+    <Content Include="Assets\Textures\StoneNormal.dds" />
+    <Content Include="Assets\iconfinder_calligrakrita_3246772.png" />
+    <Content Include="Assets\iconfinder_codeblocks_3246770.png" />
+    <Content Include="Assets\iconfinder_eog_3246767.png" />
+    <Content Include="Assets\iconfinder_ghex_3246761.png" />
+    <Content Include="Assets\iconfinder_google-keep_3246755.png" />
+    <Content Include="Assets\iconfinder_mypaint_3246752.png" />
+    <Content Include="Assets\iconfinder_preferences-system_3246751.png" />
+    <Content Include="Assets\iconfinder_stellarium_3246749.png" />
+    <Content Include="Assets\iconfinder_vmware-workstation_3246748.png" />
+    <Content Include="Assets\translate.png" />
+    <None Include="Resources\rotate.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Icons\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\UrhoSharp.1.9.67\build\net45\UrhoSharp.targets" Condition="Exists('packages\UrhoSharp.1.9.67\build\net45\UrhoSharp.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\UrhoSharp.1.9.67\build\net45\UrhoSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\UrhoSharp.1.9.67\build\net45\UrhoSharp.targets'))" />
+    <Error Condition="!Exists('packages\UrhoSharp.Tools.1.8.93\build\UrhoSharp.Tools.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\UrhoSharp.Tools.1.8.93\build\UrhoSharp.Tools.targets'))" />
+  </Target>
+  <Import Project="packages\UrhoSharp.Tools.1.8.93\build\UrhoSharp.Tools.targets" Condition="Exists('packages\UrhoSharp.Tools.1.8.93\build\UrhoSharp.Tools.targets')" />
+</Project>

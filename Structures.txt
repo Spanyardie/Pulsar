@@ -1,0 +1,145 @@
+
+	BaseEntity
+		Node <----------------|
+		Components (Node) --->|
+			Model <-----------------------------|
+				PulsarComponent - Component     |
+	  |--->	Material                            ^
+	  |			PulsarComponent - Component --->|
+	  |--->	DefaultModel <----------------------v
+	  |			PulsarComponent - Component
+	  |<--- Texture3D (Texture)
+				PulsarComponent - Component
+			AnimatedModel
+				PulsarComponent - Component
+			Gizmo
+				PulsarComponent - Component
+			RigidBody
+				PulsarComponent - Component
+			CollisionShape
+				PulsarComponent - Component
+			Constraint
+				PulsarComponent - Component
+			Terrain
+				PulsarComponent - Component
+			ParticleEmitter
+				PulsarComponent - Component
+			CustomGeometry
+				PulsarComponent - Component
+			AnimationController
+				PulsarComponent - Component
+		Components (Properties)
+			NodeProperties
+				PulsarComponent - Component
+			CameraProperties
+				PulsarComponent - Component
+			LightProperties
+				PulsarComponent - Component
+			ModelProperties
+				PulsarComponent - Component
+			MaterialProperties
+				PulsarComponent - Component
+			RigidodyProperties
+				PulsarComponent - Component
+			CollisionShapeProperties
+				PulsarComponent - Component
+			ConstraintProperties
+				PulsarComponent - Component
+			TerrainProperties
+				PulsarComponent - Component
+			ParticleEmitterProperties
+				PulsarComponent - Component
+			CustomGeometryProperties
+				PulsarComponent - Component
+		Actions
+			PulsarAction
+				Tween
+					Duration, Key, From, To, TweenAction
+				BezierBy
+					Duration, BezierConfig
+				BezierTo
+					Duration, BezierConfig
+				Blink
+					Duration, NumberOfTimes
+				DelayTime
+					Duration
+				EaseBackIn
+					PulsarAction
+				EaseBackInOut
+					PulsarAction
+				EaseBackOut
+					PulsarAction
+				EaseBounceIn
+					PulsarAction
+				EaseBounceInOut
+					PulsarAction
+				EaseBounceOut
+					PulsarAction
+				EaseElastic
+					PulsarAction, Period
+				EaseElasticIn
+					PulsarAction, Period
+				EaseElasticInOut
+					PulsarAction, Period
+				EaseElasticOut
+					PulsarAction, Period
+				EaseExponentialIn
+					PulsarAction
+				EaseExponentialInOut
+					PulsarAction
+				EaseExponentialOut
+					PulsarAction
+				EaseIn
+					PulsarAction, Rate
+				EaseInOut
+					PulsarAction, Rate
+				EaseOut
+					PulsarAction, Rate
+				EaseSineIn
+					PulsarAction
+				EaseSineInOut
+					PulsarAction
+				EaseSineOut
+					PulsarAction
+				FadeIn
+					Duration
+				FadeOut
+					Duration
+				FadeTo
+					Duration, Opacity
+				JumpBy
+					Duration, Position, Height, Jumps
+				JumpTo
+					Duration, Position, Height, Jumps
+				MoveBy
+					Duration, Position
+				MoveTo
+					Duration, Position
+				Place
+					Position
+				Repeat
+					PulsarAction, NumberOfTimes
+				RepeatForever
+					PulsarAction
+				ReverseTime
+					PulsarAction
+				RotateAroundBy
+					Duration, Point, DeltaX, DeltaY, DeltaZ, TransformSpace
+				RotateBy
+					Duration, DeltaX, DeltaY, DeltaZ
+				RotateTo
+					Duration, DeltaX, DeltaY, DeltaZ
+				ScaleBy
+					Duration, ScaleX, ScaleY, ScaleZ
+				ScaleTo
+					Duration, ScaleX, ScaleY, ScaleZ
+				Hide
+				Show
+				Spawn
+					PulsarAction[]
+				TintBy
+					Duration, DeltaR, DeltaG, DeltaB, DeltaA
+				TintTo
+					Duration, DeltaR, DeltaG, DeltaB, DeltaA
+				ToggleVisibility
+				

@@ -1,0 +1,54 @@
+
+	BaseEntity
+		Node <----------------|
+		Components (Node) --->|
+			Model <-----------------------------|
+				PulsarComponent - Component     |
+	  |--->	Material                            ^
+	  |			PulsarComponent - Component --->|
+	  |--->	DefaultModel <----------------------v
+	  |			PulsarComponent - Component
+	  |<--- Texture3D (Texture)
+				PulsarComponent - Component
+			AnimatedModel
+				PulsarComponent - Component
+			Gizmo
+				PulsarComponent - Component
+			RigidBody
+				PulsarComponent - Component
+			CollisionShape
+				PulsarComponent - Component
+			Constraint
+				PulsarComponent - Component
+			Terrain
+				PulsarComponent - Component
+			ParticleEmitter
+				PulsarComponent - Component
+			CustomGeometry
+				PulsarComponent - Component
+			AnimationController
+				PulsarComponent - Component
+		Components (Properties)
+			NodeProperties
+				PulsarComponent - Component
+			CameraProperties
+				PulsarComponent - Component
+			LightProperties
+				PulsarComponent - Component
+			ModelProperties
+				PulsarComponent - Component
+			MaterialProperties
+				PulsarComponent - Component
+			RigidodyProperties
+				PulsarComponent - Component
+			CollisionShapeProperties
+				PulsarComponent - Component
+			ConstraintProperties
+				PulsarComponent - Component
+			TerrainProperties
+				PulsarComponent - Component
+			ParticleEmitterProperties
+				PulsarComponent - Component
+			CustomGeometryProperties
+				PulsarComponent - Component
+			
